@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/img_view_product_detail"
+            android:layout_height="400dp"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_name"
+            android:layout_below="@+id/img_view_product_detail"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:text="Product Name"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_price"
+            android:layout_below="@id/tv_product_detail_name"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingLeft="8dp"
+            android:text="Price"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_desc"
+            android:layout_below="@+id/tv_product_detail_price"
+            android:layout_above="@id/tv_in_cart"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:scrollbars="vertical"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/layout_quantity"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/button_quantity_subtract"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:id="@+id/tv_product_detail_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/button_quantity_add"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_in_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold|italic"
+            android:layout_alignBottom="@+id/layout_quantity"
+            android:layout_toLeftOf="@id/layout_quantity"
+            android:layout_margin="6dp"
+            android:textSize="21sp" />
+
+        <Button
+            android:id="@+id/button_product_add"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Add To Cart"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
