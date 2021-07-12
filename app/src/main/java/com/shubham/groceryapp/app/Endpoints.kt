@@ -7,6 +7,8 @@ class Endpoints {
         const val URL_CATEGORY = "category"
         const val URL_SUB_CATEGORY = "subcategory"
         const val URL_PRODUCT_BY_SUB = "products/sub/"
+        const val URL_ADDRESS = "address"
+        const val URL_ORDER = "orders"
 
         fun getRegisterUrl(): String{
             return "${Config.BASE_URL + URL_REGISTER}"
@@ -27,5 +29,14 @@ class Endpoints {
         fun getProductBySubId(subId: Int): String{
             return "${Config.BASE_URL + URL_PRODUCT_BY_SUB}$subId"
         }
+
+        fun postAddress(): String{
+            return "${Config.BASE_URL + URL_ADDRESS}"
+        }
+
+        fun getOrder(): String{
+            return Config.BASE_URL + URL_ORDER
+        }
+
     }
 }

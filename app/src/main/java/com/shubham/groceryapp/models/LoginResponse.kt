@@ -2,7 +2,7 @@ package com.shubham.groceryapp.models
 
 data class LoginResponse(
     val token: String,
-    val user: User
+    val user: Users
 )
 
 data class User(

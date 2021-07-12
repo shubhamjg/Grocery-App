@@ -6,11 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".activities.RegisterActivity">
 
+    <include layout="@layout/app_bar"/>
+
     <Button
         android:id="@+id/register_button"
         android:layout_width="143dp"
         android:layout_height="57dp"
         android:text="Register"
+        android:backgroundTint="#D35558"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

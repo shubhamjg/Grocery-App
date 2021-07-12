@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import com.shubham.groceryapp.R
 import com.shubham.groceryapp.app.Endpoints
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.app_bar.*
 import org.json.JSONObject
 
 class RegisterActivity : AppCompatActivity() {
@@ -18,6 +19,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         init()
+
+        var toolbar = my_toolbar
+        toolbar.title = "Register"
+        setSupportActionBar(toolbar)
+
     }
 
     private fun init(){

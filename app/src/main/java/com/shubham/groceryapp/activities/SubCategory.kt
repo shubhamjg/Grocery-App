@@ -1,5 +1,6 @@
 package com.shubham.groceryapp.activities
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import com.shubham.groceryapp.models.Category
 import com.shubham.groceryapp.models.SubCatData
 import com.shubham.groceryapp.models.SubCategoryResult
 import kotlinx.android.synthetic.main.activity_sub_category.*
+import kotlinx.android.synthetic.main.app_bar.*
 
 class SubCategory : AppCompatActivity() {
 
@@ -31,6 +33,12 @@ class SubCategory : AppCompatActivity() {
         var url = "https://grocery-second-app.herokuapp.com/api/subcategory/${category?.catId}"
 
         init(url)
+
+        var toolbar = my_toolbar
+        toolbar.title = "Category"
+        setSupportActionBar(toolbar)
+
+
     }
 
 
@@ -51,12 +59,15 @@ class SubCategory : AppCompatActivity() {
         when(item.itemId){
             android.R.id.home -> finish()
             //R.id.action_cart -> startActivity(Intent(this, ShoppingCartActivity::class.java))
-        }
+       }
         return true
     }
 
     private fun getData(url: String) {
 
+        var pd = ProgressDialog(this)
+        pd.setCancelable(false)
+        pd.setMessage("Loading.. Please wait")
         var request = StringRequest(Request.Method.GET, url, {
             var gson = Gson()
             var subCatResult = gson.fromJson(it, SubCategoryResult::class.java)
@@ -68,11 +79,13 @@ class SubCategory : AppCompatActivity() {
                 subCatAdapter?.addFragment(mList[i].subName, mList[i].subId)
             }
             subCatAdapter?.datachanged()
+            pd.dismiss()
 
         }, {
             //Log.d("abc", it.message)
         })
 
         Volley.newRequestQueue(this).add(request)
+        pd.show()
     }
 }

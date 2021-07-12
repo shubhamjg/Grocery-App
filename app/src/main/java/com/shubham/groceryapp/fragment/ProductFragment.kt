@@ -70,7 +70,7 @@ class ProductFragment : Fragment() {
 
 
         }, {
-            //Log.d("abc", it.message)
+
         })
 
         Volley.newRequestQueue(requireActivity()).add(request)
